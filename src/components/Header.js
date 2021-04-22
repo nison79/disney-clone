@@ -1,18 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../assets/images/logo.svg'
+import home from '../assets/images/home-icon.svg'
+import search from '../assets/images/search-icon.svg'
+import watchlist from '../assets/images/watchlist-icon.svg'
+import originals from '../assets/images/original-icon.svg'
+import movies from '../assets/images/movie-icon.svg'
+import series from '../assets/images/series-icon.svg'
 
 const Header = () => {
   return (
     <Nav>
       <Logo>
-        <img src = '/images/logo.svg' alt="Disney+"/>
+        <img src = {logo} alt="Disney+"/>
       </Logo>
       <NavMenu>
         <a href="/home">
-          <img src="./images/home-icon.svg" alt="home"/>
+          <img src={home} alt="home"/>
           <span>HOME</span>
         </a>
+        <a href="/home">
+          <img src={search} alt="home"/>
+          <span>SEARCH</span>
+        </a>
+        <a href="/home">
+          <img src={watchlist} alt="home"/>
+          <span>WATCHLIST</span>
+        </a>
+        <a href="/home">
+          <img src={originals} alt="home"/>
+          <span>ORIGINALS</span>
+        </a>
+        <a href="/home">
+          <img src={movies} alt="home"/>
+          <span>MOVIES</span>
+        </a>
+        <a href="/home">
+          <img src={series} alt="home"/>
+          <span>SERIES</span>
+        </a>
       </NavMenu>
+      <Login>Login</Login>
     </Nav>
   )
 }
@@ -107,6 +135,22 @@ const NavMenu = styled.div`
       opacity:1 !important;
     }
   }
+  }
+`
+
+const Login = styled.a`
+  background-color: rgba(0,0,0,0.6);
+  padding:8px 16px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  border:1px solid #f9f9f9;
+  border-radius:4px;
+  transition: all .2s ease 0s;
+
+  &:hover {
+    background-color:#f9f9f9;
+    color:#000;
+    border-color:transparent;
   }
 `
 
