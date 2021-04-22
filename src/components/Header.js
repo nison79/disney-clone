@@ -7,8 +7,16 @@ import watchlist from '../assets/images/watchlist-icon.svg'
 import originals from '../assets/images/original-icon.svg'
 import movies from '../assets/images/movie-icon.svg'
 import series from '../assets/images/series-icon.svg'
+import { auth, provider } from '../firebase'
 
 const Header = () => {
+  const handleAuth = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      console.log(result);
+    }).catch((error) => {
+      alert(error.message)
+    })
+  }
   return (
     <Nav>
       <Logo>
@@ -40,7 +48,7 @@ const Header = () => {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <Login>Login</Login>
+      <Login onClick={handleAuth}>Login</Login>
     </Nav>
   )
 }
