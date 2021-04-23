@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ctaimage from '../assets/images/cta-logo-one.svg'
+import ctalogo2 from '../assets/images/cta-logo-two.png'
 
 const Login = () => {
   return (
@@ -14,7 +15,7 @@ const Login = () => {
             You can view the content in any screen in your house and in your mobile devices.
             The Disney bundle will increse by 1$.
           </Description>
-          <CTALogoTwo src='./images/cta-logo-two.png' alt="logo2"/>
+          <CTALogoTwo src={ctalogo2} alt="logo2"/>
         </CTA>
         <BgImage />
       </Content>
