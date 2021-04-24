@@ -19,31 +19,31 @@ const Viewers = () => {
     <Container>
       <Wrap>
         <img src={views1} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted>
           <source src={video1} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
         <img src={views2} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted>
           <source src={video2} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
         <img src={views3} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted>
           <source src={video3} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
         <img src={views4} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted>
           <source src={video4} type="video/mp4" />
         </video>
       </Wrap>
       <Wrap>
         <img src={views5} alt="" />
-        <video autoPlay={true} loop={true} playsInline={true}>
+        <video autoPlay={true} loop={true} playsInline={true} muted>
           <source src={video5} type="video/mp4" />
         </video>
       </Wrap>
@@ -86,6 +86,15 @@ const Wrap = styled.div`
     width: 100%;
     z-index: 1;
     top: 0;
+  }
+
+  video {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    z-index:0;
+
   }
 `;
 
