@@ -22,6 +22,7 @@ const Home = (props) => {
   useEffect(() => {
     console.log("hello");
     db.collection("movies").onSnapshot((snapshot) => {
+      // eslint-disable-next-line array-callback-return
       snapshot.docs.map((doc) => {
         console.log(recommends);
         switch (doc.data().type) {
@@ -40,6 +41,7 @@ const Home = (props) => {
           case "trending":
             trending = [...trending, { id: doc.id, ...doc.data() }];
             break;
+            default:
         }
       });
 

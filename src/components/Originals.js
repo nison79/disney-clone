@@ -1,53 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectOriginal } from "../features/movie/movieSlice";
 
 const Originals = () => {
+  const movies = useSelector(selectOriginal);
   return (
     <Container>
       <h4>Originals</h4>
       <Content>
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMROQyRd-7sFqafxVnenXWc7eehXxiNNXDaw&usqp=CAU"
-              alt="mickey"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMROQyRd-7sFqafxVnenXWc7eehXxiNNXDaw&usqp=CAU"
-              alt="mickey"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMROQyRd-7sFqafxVnenXWc7eehXxiNNXDaw&usqp=CAU"
-              alt="mickey"
-            />
-          </Link>
-        </Wrap>
-
-        <Wrap>
-          <Link to="/">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMROQyRd-7sFqafxVnenXWc7eehXxiNNXDaw&usqp=CAU"
-              alt="mickey"
-            />
-          </Link>
-        </Wrap>
+        {movies &&
+          movies.map((movie, key) => (
+            <Wrap key={key}>
+              {movie.id}
+              <Link to={"/detail" + movie.id}>
+                <img src={movie.cardImg} alt={movie.title} />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
     </Container>
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 0 0 26px;
+`;
 
 const Content = styled.div`
   padding: 0 0 26px;
